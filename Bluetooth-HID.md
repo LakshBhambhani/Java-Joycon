@@ -146,9 +146,9 @@ The middle byte is shared between the controllers.
 #### Standard input report - buttons
 | Byte       | Bit `x01` | `x02` | `x04`    | `x08`    | `x10` | `x20`    | `x40` | `x80`         |
 |:----------:|:---------:|:-----:|:--------:|:--------:|:-----:|:--------:|:-----:|:-------------:|
-| 3 (Right)  | Y         | X     | B        | A        | SR    | SL       | R     | ZR            |
-| 4 (Shared) | Minus     | Plus  | R Stick  | L Stick  | Home  | Capture  | --    | Charging Grip |
-| 5 (Left)   | Down      | Up    | Right    | Left     | SR    | SL       | L     | ZL            |
+| 4 (Right)  | Y         | X     | B        | A        | SR    | SL       | R     | ZR            |
+| 5 (Shared) | Minus     | Plus  | R Stick  | L Stick  | Home  | Capture  | --    | Charging Grip |
+| 6 (Left)   | Down      | Up    | Right    | Left     | SR    | SL       | L     | ZL            |
 
 Note that the button status of the L and R Joy-Cons can be ORed together to get a complete button status.
 
