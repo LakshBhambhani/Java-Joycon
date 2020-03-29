@@ -8,5 +8,5 @@ system_profiler SPBluetoothDataType
 ```
 
 ## Other Approaches
-https://github.com/AlexCouch/JoyCouch
+https://github.com/AlexCouch/JoyCouch<br>
 https://github.com/elgoupil/joyconLib
