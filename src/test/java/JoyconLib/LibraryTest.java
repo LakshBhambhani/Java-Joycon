@@ -9,5 +9,7 @@ import static org.junit.Assert.*;
 public class LibraryTest {
     @Test public void testJoycons() {
         JoyconExample.run();
+
+        
     }
 }

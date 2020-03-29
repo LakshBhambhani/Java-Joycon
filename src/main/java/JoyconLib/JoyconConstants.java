@@ -9,7 +9,7 @@ package JoyconLib;
  * <b>The class with all the constant value the library needs to work</b>
  *
  * @version 1.0
- * @author goupil
+ * @author lakshbhambhani
  */
 public class JoyconConstants {
 

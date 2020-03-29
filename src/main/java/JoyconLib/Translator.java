@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package JoyconLib;
 
-import java.util.Base64;
 import java.util.HashMap;
 
 /**
  * The translator for the joycon. Will translate the raw value recieved by the joycon to JoyconButton and it's state (Pressed/ Not Pressed)
- *
  * @author lakshbhambhani
  */
 public class Translator {

@@ -1,8 +1,11 @@
 package JoyconLib;
 
 import java.util.HashMap;
-import java.util.Set;
 
+/**
+ * Represents the right joycon
+ * @author lakshbhambhani
+ */
 public abstract class RightJoycon extends Joycon{
 	
 	public JoyconButton plus = new JoyconButton(JoyconConstants.Buttons.PLUS);
@@ -19,10 +22,17 @@ public abstract class RightJoycon extends Joycon{
 	
 	public JoyconJoystick joystick = new JoyconJoystick();
 
+	/**
+	 * Used to create a right joycon
+	 */
 	public RightJoycon() {
 		super(JoyconConstants.JOYCON_RIGHT);
 	}
 	
+	/**
+	 * Used to update the values of the buttons and joysticks when an input is recieved
+ 	 * @param map The map that contains the id of the input and whether it is pressed
+	 */
 	@Override
 	public void updateValues(HashMap<String, Boolean> map) {
 		 map.forEach((id, isPressed) -> {
@@ -90,6 +100,10 @@ public abstract class RightJoycon extends Joycon{
 		});
 	}
 	
+	/**
+	 * Used to implement user-specific code that runs when an input is recieved
+	 * @param map The map that contains the id of the input and whether it is pressed
+	 */
     public abstract void onInputReportDoThis(HashMap<String, Boolean> map);
 	
 

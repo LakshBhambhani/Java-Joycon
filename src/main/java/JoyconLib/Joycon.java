@@ -16,13 +16,10 @@ import purejavahidapi.InputReportListener;
 import purejavahidapi.PureJavaHidApi;
 
 /**
- * <b>Main class of the library. This class will be your joycon</b>
- * <p>
- * To use it, just create a new Joycon object</p>
- * <p>
- * You can check the example to learn how to use this library</p>
+ * Abstract Joycon Class. Contains methods to initialize a joystick and do certain things when it disconnects or when an 
+ * input is reported
  *
- * @author goupil
+ * @author lakshbhambhani
  * @version 1.0
  */
 public abstract class Joycon {
@@ -62,6 +59,10 @@ public abstract class Joycon {
         }
     }
     
+    /**
+     * Used to reconnect the joycon
+     * @param joyconId
+     */
     public void reconnect(short joyconId) {
     	 if ((joyconId == JoyconConstants.JOYCON_LEFT) || (joyconId == JoyconConstants.JOYCON_RIGHT)) {
              initialize(joyconId);
@@ -96,6 +97,10 @@ public abstract class Joycon {
         return isClosed;
     }
 
+    
+    /** 
+     * @param joyconId
+     */
     private void initialize(short joyconId) {
         joyconInfo = null;
         joycon = null;
@@ -298,6 +303,9 @@ public abstract class Joycon {
         }
     }
     
+    /**
+     * Tests if the joycon is still connected and updated isConnected based on that
+     */
     public void testConnection(short joyconId) {
     	List<HidDeviceInfo> list = PureJavaHidApi.enumerateDevices();
         for (HidDeviceInfo info : list) {
@@ -316,10 +324,40 @@ public abstract class Joycon {
         }
     }
     
+    
+    
+    /** 
+     * @param button
+     */
+    /** 
+     * @param button
+     */
+    /**
+     * Abstract Method used to update the values of the buttons or joystick when an input is reported
+     * @param map The map containing the id of the button and isPressed
+     */
     public abstract void updateValues(HashMap<String, Boolean> map);
     
+    
+    
+    /** 
+     * @param button
+     */
+    /** 
+     * @param button
+     */
+    /**
+     * This method can be used to do something user-specific when an input is reported. Such as user wanting to log what inputs are 
+     * reported
+     * @param map The map containing the id of the button and isPressed
+     */
     public abstract void onInputReportDoThis(HashMap<String, Boolean> map);
     
+    /**
+     *  Used to check if a certain button is pressed
+     * @param button The button that has to be checked if it is pressed
+     * @return boolean isPressed - True if it is pressed
+     */ 
     public boolean isButtonPressed(JoyconButton button) {
 		return button.isPressed();
 	}
