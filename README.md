@@ -7,3 +7,6 @@ Find info about bluetooth devices connected to your device using
 system_profiler SPBluetoothDataType
 ```
 
+## Other Approaches
+https://github.com/AlexCouch/JoyCouch
+https://github.com/elgoupil/joyconLib
