@@ -13,6 +13,8 @@ plugins {
     id "java-gradle-plugin"
 }
 
+def ROBOT_MAIN_CLASS = "JoyconLib.JoyconExample"
+
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
@@ -47,10 +49,18 @@ gradlePlugin {
         joyconPlugin {
             id = 'com.laksh.JoyconLib'
             displayName = 'Plugin for using the Nintendo Joycons with Java Applications.'
-            description = 'Plugin for using the Nintendo Joycons with Java Applications. Supports buttons and joysticks. Battery & Rumble coming soon'
+            description = 'Plugin for using the Nintendo Joycons with Java Applications. Supports buttons and joysticks, battery & rumble. IMU under testing and NFC/IR will come soon.'
             implementationClass = 'JoyconLib.Joycon'
-            version = '1.0'
+            version = '1.1'
         }
+    }
+}
+
+jar{
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    // I need to set my manifest up so the coprocessor knows where my main class is
+    manifest {
+        attributes 'Main-Class': ROBOT_MAIN_CLASS
     }
 }
 

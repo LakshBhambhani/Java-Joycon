@@ -2,7 +2,6 @@ package JoyconLib;
 
 import java.util.Map;
 
-import org.junit.Test;
 
 import JoyconLib.Joycon;
 import JoyconLib.JoyconConstants;
